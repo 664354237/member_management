@@ -1,0 +1,18 @@
+#集群版
+#spring.redis.cluster.nodes: ['192.168.5.246:6381', '192.168.5.247:6381', '192.168.5.246:6382']
+#spring.redis:
+#集群版完
+#单机版
+spring.redis:
+    host: 127.0.0.1
+    port: 6379
+    #单机版完
+    password:
+    #最大空连接数
+    maxActive: 10000
+    #最大空闲数
+    maxIdle: 20
+    #最大等待时间
+    maxWaitMillis: -1ms
+    #超时时间
+    timeout: 10000ms

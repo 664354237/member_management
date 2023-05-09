@@ -1,0 +1,7 @@
+spring:
+redis.name: upmes-test  #内存前缀
+server.port: 9008
+#spring.servlet.multipart.location: C:/alldev/u01/temp
+#upload:
+#  path:  C:/alldev/u01/test/
+#  localPath: E:/alldev/u01/test/

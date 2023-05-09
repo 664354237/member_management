@@ -1,0 +1,33 @@
+spring:
+    aop:
+        proxy-target-class: true
+        auto: true
+    datasource:
+        druid:
+            db1:
+                url: jdbc:mysql://192.168.1.49:3306/activiti-api?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&zeroDateTimeBehavior=convertToNull
+                username: root
+                password: root
+                driver-class-name: com.mysql.jdbc.Driver
+                initialSize: 1
+                minIdle: 200
+                maxActive: 2000
+                dialect: mysql
+                #druid recycle
+                removeAbandoned: true
+                removeAbandonedTimeout: 300
+                logAbandoned: false
+            db2:
+                url: jdbc:mysql://192.168.1.49:3306/gx-java-activiti?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&zeroDateTimeBehavior=convertToNull
+                username: root
+                password: root
+                driver-class-name: com.mysql.jdbc.Driver
+                initialSize: 1
+                minIdle: 200
+                maxActive: 2000
+                dialect: mysql
+                #druid recycle
+                removeAbandoned: true
+                removeAbandonedTimeout: 300
+                logAbandoned: false
+

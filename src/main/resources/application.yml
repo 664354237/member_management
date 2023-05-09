@@ -1,0 +1,51 @@
+spring:
+  application.name: designer
+  profiles.active: [db,test,redis]
+  velocity.checkTemplateLocation: false
+  mvc:
+    view:
+     prefix: '/WEB-INF/jsp/'
+     suffix: .jsp
+  servlet:
+    multipart:
+      max-file-size: 10000MB
+      max-request-size: 12500MB
+  #json返回时间格式化
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  aop:
+    proxy-target-class: true
+    auto: true
+redis.isUpdater: true #是否接收内存更新消息
+redis:
+  token:
+    expire: 3600
+mybatis-plus:
+  type-enums-package: com/gx/exchange/enums/**
+  configuration:
+    default-enum-type-handler: org.apache.ibatis.type.EnumOrdinalTypeHandler
+server:
+  servlet:
+    context-path: /
+  tomcat:
+      #设置http参数限制
+      max-http-header-size: 3145728
+      #设置post请求大小不受限制
+      max-http-post-size: -1
+      uri-encoding: UTF-8
+mybatis.frame.defult: false
+logging:
+  config:  classpath:log4j2.yml
+  level:
+    org.springframework.cloud.gateway: trace
+    org.springframework.http.server.reactive: debug
+    org.springframework.web.reactive: debug
+    reactor.ipc.netty: debug
+# 配置slq打印日志
+#mybatis-plus:
+#  configuration:
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+
+
