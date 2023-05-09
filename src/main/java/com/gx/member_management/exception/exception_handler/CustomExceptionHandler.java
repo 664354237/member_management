@@ -29,7 +29,7 @@ public class CustomExceptionHandler {
     @ResponseBody
     public Object runtimeExceptionHandler(RuntimeException e) {
         //输出记录打到本地日志
-        expLogger.error("RuntimeException", e);
+        expLogger.info("RuntimeException", e);
         //记录到数据库
         exceptionLogMapper.insert(new ExceptionLog(UUID.randomUUID().toString(), new Date(), e.toString()));
         return new AjaxResult(HttpStatus.ERROR, "网络出小差了, 请稍后再试,或者联系管理员");
